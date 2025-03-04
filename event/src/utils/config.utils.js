@@ -11,11 +11,11 @@ import { getValidateMessages } from '../validators/helpers.validators.js';
 
 export const readConfiguration = () => {
   const envVars = {
-    clientId: process.env.CTP_CLIENT_ID,
-    clientSecret: process.env.CTP_CLIENT_SECRET,
-    projectKey: process.env.CTP_PROJECT_KEY,
-    scope: process.env.CTP_SCOPE,
-    region: process.env.CTP_REGION,
+    clientId: 'ECm4lQW2rXzVcRq4Ur4s8ifZ',
+    clientSecret: 'VrMLjn2y4svn5dqUJ2GY2ErtrA-mZAX0',
+    projectKey: 'connector_test',
+    scope: 'manage_project:connector_test',
+    region: 'europe-west1.gcp',
   };
 
   const validationErrors = getValidateMessages(envValidators, envVars);
