@@ -12,8 +12,7 @@
     "test": "jest --config jest.config.cjs",
     "test:watch": "jest --watch",
     "connector:post-deploy": "node src/connector/post-deploy.js",
-    "connector:pre-undeploy": "node src/connector/pre-undeploy.js",
-    "build": "npm run lint && npm run test"
+    "connector:pre-undeploy": "node src/connector/pre-undeploy.js"
   },
   "author": "",
   "license": "MIT",
