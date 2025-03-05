@@ -101,7 +101,7 @@
 deployAs:
   - name: ct-connector
     applicationType: service
-    endpoint: /ct-connector
+    endpoint: /service
     scripts:
       postDeploy: npm install && npm run build && npm run connector:post-deploy
       preUndeploy: npm install && npm run build && npm run connector:pre-undeploy
