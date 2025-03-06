@@ -1,123 +1,12 @@
-#deployAs:
-#  - name: service
-#    applicationType: service
-#    endpoint: /service
-#    scripts:
-#      postDeploy: npm install && npm run connector:post-deploy
-#      preUndeploy: npm install && npm run connector:pre-undeploy
-#    configuration:
-#      standardConfiguration:
-#        - key: CTP_PROJECT_KEY
-#          description: Project key of the commercetools Composable Commerce Project
-#          required: true
-#          default: 'connector_test'
-#        - key: CTP_REGION
-#          description: Region where the Composable Commerce Project is hosted
-#          required: true
-#          default: 'europe-west1.gcp'
-#      securedConfiguration:
-#        - key: CTP_CLIENT_ID
-#          description: client_id of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_CLIENT_SECRET
-#          description: secret of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_SCOPE
-#          description: scope of an API Client for the Composable Commerce Project
-#  - name: job
-#    applicationType: job
-#    endpoint: /job
-#    properties:
-#      schedule: '*/5 * * * *'
-#    configuration:
-#      standardConfiguration:
-#        - key: CTP_PROJECT_KEY
-#          description: Project key of the Composable Commerce Project
-#          required: true
-#          default: 'connector_test'
-#        - key: CTP_REGION
-#          description: Region where the Composable Commerce Project is hosted
-#          required: true
-#          default: 'europe-west1.gcp'
-#      securedConfiguration:
-#        - key: CTP_CLIENT_ID
-#          description: client_id of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_CLIENT_SECRET
-#          description: secret of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_SCOPE
-#          description: scope of an API Client for the Composable Commerce Project
-#  - name: event
-#    applicationType: event
-#    endpoint: /event
-#    scripts:
-#      postDeploy: npm install && npm run connector:post-deploy
-#      preUndeploy: npm install && npm run connector:pre-undeploy
-#    configuration:
-#      standardConfiguration:
-#        - key: CTP_PROJECT_KEY
-#          description: Project key of the Composable Commerce Project
-#          required: true
-#          default: 'connector_test'
-#        - key: CTP_REGION
-#          description: Region where the Composable Commerce Project is hosted
-#          required: true
-#          default: 'europe-west1.gcp'
-#      securedConfiguration:
-#        - key: CTP_CLIENT_ID
-#          description: client_id of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_CLIENT_SECRET
-#          description: secret of an API Client for the Composable Commerce Project
-#          required: true
-#        - key: CTP_SCOPE
-#          description: scope of an API Client for the Composable Commerce Project
-#  - name: merchant-center-custom-application
-#    applicationType: merchant-center-custom-application
-#    configuration:
-#      standardConfiguration:
-#        - key: CUSTOM_APPLICATION_ID
-#          description: The Custom Application ID
-#          required: true
-#        - key: CLOUD_IDENTIFIER
-#          description: The cloud identifier
-#          default: 'gcp-eu'
-#        - key: ENTRY_POINT_URI_PATH
-#          description: The Application entry point URI path
-#          required: true
-#  - name: assets
-#    applicationType: assets
-#inheritAs:
-#  configuration:
-#    securedConfiguration:
-#      - key: GLOBAL_SECURED_CONFIGURATION
-#        description: Secured configuration that is applied to all applications
-#        required: true
-#    standardConfiguration:
-#      - key: GLOBAL_STANDARD_CONFIGURATION
-#        description: Standard configuration that is applied to all applications
-#        required: true
 deployAs:
-  - name: ct-connector
+
+  - name: service
     applicationType: service
     endpoint: /service
     scripts:
       postDeploy: npm install && npm run build && npm run connector:post-deploy
       preUndeploy: npm install && npm run build && npm run connector:pre-undeploy
-    configuration:
-      standardConfiguration:
-        - key: CTP_REGION
-          description: region of commercetools composable commerce project
-      securedConfiguration:
-        - key: CTP_PROJECT_KEY
-          description: project key from commercetools composable commerce project
-        - key: CTP_CLIENT_ID
-          description: client id from commercetools composable commerce project
-        - key: CTP_CLIENT_SECRET
-          description: client secret from commercetools composable commerce project
-        - key: CTP_SCOPE
-          description: scope from commercetools composable commerce project
+
 inheritAs:
   apiClient:
     scopes:
@@ -129,3 +18,4 @@ inheritAs:
       - manage_orders
       - manage_payments
       - manage_stores
+      

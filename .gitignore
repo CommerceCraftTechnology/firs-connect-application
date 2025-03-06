@@ -5,5 +5,5 @@ coverage
 *.tfvars
 
 .DS_Store
-
+.env
 dist/
